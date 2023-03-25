@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cupcakes</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Cupcake Menu</h1>
+    <ul id="cc-list">
+
+    </ul>
+
+    <h2>Add a new CUPCAKE!</h2>
+    <form id="add-cc-form">
+        {{ form.hidden_tag() }}
+        {% for field in form 
+            if field.widget.input_type != 'hidden'%}
+        <div>
+            {{field.label}}
+            {{field(class_='form-control')}}          
+            {% for err in field.errors %}
+            <small class="form-text text-danger">
+                {{err}}
+            </small>
+            {% endfor %}
+        </div>
+        {% endfor %}
+        <button>Submit</button>
+    </form>
+    <script src="https://unpkg.com/axios/dist/axios.js"></script>
+    <script src="/static/cupcake.js"></script>
+</body>
+</html>
