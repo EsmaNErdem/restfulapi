@@ -82,10 +82,10 @@ def delete_cupcake(id):
 # 	"image":"https://thefirstyearblog.com/wp-content/uploads/2017/03/cookies-and-cream-cupcakes-Square1.png"
 # }
 
-{
-	"flavor":"Carrot",
-	"size":"small",
-	"rating":"7",
-	"image":"https://www.cookingclassy.com/wp-content/uploads/2014/01/carrot_cake_cupcakes2edit..jpg"
-}
+# {
+# 	"flavor":"Carrot",
+# 	"size":"small",
+# 	"rating":"7",
+# 	"image":"https://www.cookingclassy.com/wp-content/uploads/2014/01/carrot_cake_cupcakes2edit..jpg"
+# }
     

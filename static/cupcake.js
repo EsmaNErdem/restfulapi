@@ -11,7 +11,6 @@ const deleteBtn = document.querySelectorAll("#delete-button")
 // getting cupcakes list, return an array of cupcake objects.
 async function getCupcakes(){
     const resp = await axios.get("/api/cupcakes");
-    // console.log("---------", resp.data)
     return resp.data.cupcakes
 }
 
@@ -53,12 +52,13 @@ form.addEventListener('submit', async function(event){
             flavor,
             size,
             rating,
-            image},
+            image
+        },
         {
             headers: {'X-CSRFToken': csrfToken}
         }
         
-       )
+    )
 
     let new_cupcake = generateHtml(resp.data.cupcake)
     ul.innerHTML += new_cupcake
@@ -70,9 +70,9 @@ ul.addEventListener("click", async function(event){
     if(event.target.tagName === 'BUTTON'){
         let cupcake = event.target.closest("div");
         let id = cupcake.getAttribute('data-cupcake-id');
-        const resp = await axios.delete(`/api/cupcakes/${id}`)
-        console.log(resp)
+        await axios.delete(`/api/cupcakes/${id}`)
         cupcake.remove()
+
     }
 
 })
